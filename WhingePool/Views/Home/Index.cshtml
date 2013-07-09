@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Home Page";  
+}
+
+<div class="hero-unit">
+    <h1>WhingePool</h1>
+    @if (!Request.IsAuthenticated)
+    {
+        <p class="lead">WhingePool allows you to whinge and get things off your chest, so you can continue on with the rest of your life.</p>
+        <p><a href="About.cshtml" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    }
+    else
+    {
+        <div class="row" ng-init="param='@User.Identity.GetUserName()';">
+            
+            <form ng-controller="whingesController">
+                <fieldset>
+                    <textarea placeholder="Type a whinge…" class="input-block-level" ng-model="newWhinge.Text"></textarea>
+                    <span class="help-block">Type a 150 character whinge in here.</span>
+                    <label>
+                        Whinge Pool
+                    </label>
+                    <div ng-controller="whingePoolsController">
+                        <input type="text" ng-model="newWhinge.WhingePool" typeahead="whingePool.Title for whingePool in whingePools | filter:$viewValue">
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-click="addWhinge(newWhinge)">Whinge!</button>
+                </fieldset>
+            </form>
+            </div>
+            }
+        </div>
+@if (Request.IsAuthenticated)
+{
+    <div class="row" ng-init="param='@User.Identity.GetUserName()';">
+        <div class="span4 table-striped" ng-controller="whingesController">
+            <h2>My Whinges</h2>
+            <table class="table-striped">
+                <tr ng-repeat="whinge in whinges">
+                    <td>
+                        <span class="label">{{whinge.WhingePool}}</span> {{whinge.Text}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="span4  table-striped" ng-controller="whingePoolsController">
+            <h2>My Whinge Pools</h2>
+            <div class="control-list" ng-repeat="whingePool in whingePools">
+                <span class="label">
+                    {{whingePool.Title}}
+                </span>
+            </div>
+        </div>
+        <div class="span4">
+            <h2>Join WhingePools</h2>
+            <p>You need to join Whinge Pools to whinge propertly. </p>
+            <p><a class="btn" href="#">Learn more &raquo;</a></p>
+        </div>
+    </div>
+    
+}
