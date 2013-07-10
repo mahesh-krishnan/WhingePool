@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace WebApplication1.Models
 {
 
+    public class UserWhingePool
+    {
+        public string UserId { get; set; }
+        public string WhingePool { get; set; }
+    }
     public class WhingePool
     {
         public string Id { get; set; }

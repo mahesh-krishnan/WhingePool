@@ -21,7 +21,7 @@
                     <label>
                         Whinge Pool
                     </label>
-                    <div ng-controller="whingePoolsController">
+                    <div ng-controller="whingePoolsByUserController">
                         <input type="text" ng-model="newWhinge.WhingePool" typeahead="whingePool.Title for whingePool in whingePools | filter:$viewValue">
                     </div>
                     <button type="submit" class="btn btn-primary" ng-click="addWhinge(newWhinge)">Whinge!</button>
@@ -38,23 +38,33 @@
             <table class="table-striped">
                 <tr ng-repeat="whinge in whinges">
                     <td>
-                        <span class="label">{{whinge.WhingePool}}</span> {{whinge.Text}}
+                        {{whinge.Text}}<span class="label">{{whinge.WhingePool}}</span>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="span4  table-striped" ng-controller="whingePoolsController">
+        <div class="span4  table-striped" ng-controller="whingePoolsByUserController">
             <h2>My Whinge Pools</h2>
             <div class="control-list" ng-repeat="whingePool in whingePools">
-                <span class="label">
+                <a class="btn" ng-href="/WhingePools/{{whingePool.Title}}">
                     {{whingePool.Title}}
-                </span>
+                </a>
             </div>
         </div>
-        <div class="span4">
+        <div class="span4" ng-init="param='@User.Identity.GetUserName()';">
             <h2>Join WhingePools</h2>
             <p>You need to join Whinge Pools to whinge propertly. </p>
-            <p><a class="btn" href="#">Learn more &raquo;</a></p>
+            <form ng-controller="whingePoolsController" >
+                <fieldset>
+                    <label for="joinButton">
+                        Whinge Pool to join
+                    </label>
+                    <div>
+                        <input type="text" ng-model="selected" typeahead="whingePool.Title for whingePool in whingePools | filter:$viewValue">
+                    </div>
+                    <button id="joinButton" type="submit" class="btn btn-primary" ng-click="joinWhingePool(selected)">Join</button>
+                </fieldset>
+            </form>
         </div>
     </div>
     
