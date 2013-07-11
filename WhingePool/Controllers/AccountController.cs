@@ -204,6 +204,12 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
+        public ActionResult TwitterLogin()
+        {
+            return ExternalLogin("Twitter", "Twitter");
+        }
+
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
