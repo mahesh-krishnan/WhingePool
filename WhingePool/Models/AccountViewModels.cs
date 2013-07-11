@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication1.Models 
+namespace WhingePool.Models 
 {
     public class ExternalLoginConfirmationViewModel
     {

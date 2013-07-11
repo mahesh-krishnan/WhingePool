@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace WebApplication1
+namespace WhingePool
 {
     public partial class Startup 
     {

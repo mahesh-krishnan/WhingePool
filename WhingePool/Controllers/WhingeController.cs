@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
-using WebApplication1.Models;
+using WhingePool.Models;
 
-namespace WebApplication1.Controllers
+namespace WhingePool.Controllers
 {
     public class WhingeController : ApiController
     {

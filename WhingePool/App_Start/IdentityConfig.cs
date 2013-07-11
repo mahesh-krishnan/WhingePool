@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Security.Claims;
 using System.Security.Principal;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using WebApplication1;
-using WebApplication1.Models;
+using WhingePool.Models;
 
-namespace WebApplication1
+namespace WhingePool
 {
     // For more information on ASP.NET Identity, visit http://go.microsoft.com/fwlink/?LinkId=301863
     public static class IdentityConfig 
@@ -92,7 +89,7 @@ namespace Microsoft.AspNet.Identity
             ClaimsIdentity ci = identity as ClaimsIdentity;
             if (ci != null) 
             {
-                return ci.FindFirstValue(WebApplication1.IdentityConfig.UserIdClaimType);
+                return ci.FindFirstValue(WhingePool.IdentityConfig.UserIdClaimType);
             }
             return String.Empty;
         }
