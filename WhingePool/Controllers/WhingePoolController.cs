@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using WhingePool.Models;
 
@@ -55,7 +56,7 @@ namespace WhingePool.Controllers
         public static readonly Dictionary<string, List<Models.WhingePool>> UserWhingePools = new Dictionary
             <string, List<Models.WhingePool>>
         {
-            {"Mags", new List<Models.WhingePool> {WhingePools[0], WhingePools[1], WhingePools[2], WhingePools[3]}}
+            {"MaheshKrishnan", new List<Models.WhingePool> {WhingePools[0], WhingePools[1], WhingePools[2], WhingePools[3]}}
         };
 
         // GET api/whingepool
@@ -65,9 +66,9 @@ namespace WhingePool.Controllers
         }
 
         // GET api/whingepool/5
-        public IEnumerable<Models.WhingePool> Get(string id)
+        public IEnumerable<Whinge> Get(string id)
         {
-            return UserWhingePools[id] ?? new List<Models.WhingePool>();
+            return WhingeController.Whinges.Where(_ => _.WhingePool == id);
         }
 
         // POST api/whingepool

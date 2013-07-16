@@ -7,7 +7,7 @@ namespace WhingePool.Controllers
 {
     public class WhingeController : ApiController
     {
-        private static readonly List<Whinge> Whinges = new List<Whinge>
+        public static readonly List<Whinge> Whinges = new List<Whinge>
         {
             new Whinge
             {
