@@ -45,19 +45,52 @@
                 </div>
                 <div ng-controller="whingePoolsController">
                     <div ng-repeat="whingePool in whingePools">
-                        <div class="span3 well ">
-                            <h2>{{whingePool.Title}}</h2>
-                            <div ng-init="currentWhingePool=whingePool.Title"></div>
-                            <div class="table-striped" ng-controller="whingesByWhingePoolController">
-                                <table class="table-striped">
-                                    <tr ng-repeat="whinge in whinges">
-                                        <td>{{whinge.Text}}
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                      <span ng-switch on="$index % 3">
+                        <span ng-switch-when="0">
+                            <hr />
+                            <div class="row" style="padding-left: 30px; ">
+                                <div class="span4 well " >
+                                    <h2>{{whingePools[$index+1].Title}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index+1].Title"></div>
+                                    <div class="table-striped" ng-controller="whingesByWhingePoolController">
+                                        <table class="table-striped">
+                                            <tr ng-repeat="whinge in whinges">
+                                                <td>{{whinge.Text}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
 
-                        </div>
+                                </div>
+                                <div class="span4 well "  ng-show="whingePools[$index+2]">
+                                    <h2>{{whingePools[$index+2].Title}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index+2].Title"></div>
+                                    <div class="table-striped" ng-controller="whingesByWhingePoolController">
+                                        <table class="table-striped">
+                                            <tr ng-repeat="whinge in whinges">
+                                                <td>{{whinge.Text}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <div class="span4 well " ng-show="whingePools[$index+3]">
+                                    <h2>{{whingePools[$index+3].Title}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index+3].Title"></div>
+                                    <div class="table-striped" ng-controller="whingesByWhingePoolController">
+                                        <table class="table-striped">
+                                            <tr ng-repeat="whinge in whinges">
+                                                <td>{{whinge.Text}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </span>
+                    </span>
                     </div>
                 </div>
  
