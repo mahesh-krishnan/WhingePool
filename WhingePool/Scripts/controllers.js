@@ -184,6 +184,7 @@ whingePoolApp.controller("whingesController",
         whingeFactory.getWhingesByUser(userName).success(getWhingesSuccessCallback).error(errorCallback);
 
         $scope.addWhinge = function () {
+            $scope.newWhinge.Whinger = $scope.param;
             whingeFactory.addWhinge($scope.newWhinge).success(successPostCallback).error(errorCallback);
         };
 

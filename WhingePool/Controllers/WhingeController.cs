@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using WhingePool.Core;
+using WhingePool.Core.Entities;
 using WhingePool.Models;
 using WhingePool.Repository;
 
@@ -134,14 +135,14 @@ namespace WhingePool.Controllers
         //}
 
         // GET api/whinge/5
-        public IEnumerable<Whinge> Get(string id)
+        public IEnumerable<WhingesByWhingerEntity> Get(string id)
         {
             var repository = new WhingeRepository();
             return repository.GetWhinges(id);
         }
 
         // POST api/whinge
-        public void Post(Whinge whinge)
+        public void Post(WhingeEntity whinge)
         {
             var repository = new WhingeRepository();
             repository.Whinge(whinge);

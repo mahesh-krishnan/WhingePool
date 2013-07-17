@@ -19,7 +19,7 @@
                 <div class="striped" ng-controller="whingesController">
                     <h2>My Whinges</h2>
                     <div ng-repeat="whinge in whinges">
-                        {{whinge.Text}}
+                        {{whinge.Whinge}}
                     </div>
                 
                 </div>
@@ -28,14 +28,14 @@
             <div class="span9">
                 <div class="hero-unit">
                     <h1>WhingePool</h1>
-                    <div class="row" ng-init="param='@User.Identity.GetUserName()';">
+                    <div class="row" ng-init="param='@User.Identity.GetUserName()'">
 
                         <form ng-controller="whingesController">
                             <fieldset>
-                                <textarea placeholder="Type a 150 character whinge…" class="input-block-level" ng-model="newWhinge.Text"></textarea>
+                                <textarea placeholder="Type a 150 character whinge…" class="input-block-level" ng-model="newWhinge.Whinge"></textarea>
                                 <button type="submit" class="btn btn-primary pull-right" ng-click="addWhinge(newWhinge)">Whinge!</button>
                                 <span ng-controller="whingePoolsController" class="pull-right">
-                                    <input type="text" placeholder="Type the WhingePool" ng-model="newWhinge.WhingePool" typeahead="whingePool.Title for whingePool in whingePools | filter:$viewValue">
+                                    <input type="text" placeholder="Type the WhingePool" ng-model="newWhinge.WhingePool" typeahead="whingePool.Name for whingePool in whingePools | filter:$viewValue">
                                 </span>
                             </fieldset>
                         </form>
@@ -48,31 +48,31 @@
                             <hr />
                             <div class="row" style="padding-left: 30px">
                                 <div class="span4 well ">
-                                    <h2>{{whingePools[$index].Title}}</h2>
-                                    <div ng-init="currentWhingePool=whingePools[$index].Title"></div>
+                                    <h2>{{whingePools[$index].Name}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index].Name"></div>
                                     <div class="striped" ng-controller="whingesByWhingePoolController">
                                         <div ng-repeat="whinge in whinges">
-                                            {{whinge.Text}}
+                                            {{whinge.Whinge}}
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="span4 well "  ng-show="whingePools[$index+1]" >
-                                    <h2>{{whingePools[$index+1].Title}}</h2>
-                                    <div ng-init="currentWhingePool=whingePools[$index+1].Title"></div>
+                                    <h2>{{whingePools[$index+1].Name}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index+1].Name"></div>
                                     <div class="striped" ng-controller="whingesByWhingePoolController">
                                             <div ng-repeat="whinge in whinges">
-                                                {{whinge.Text}}
+                                                {{whinge.Whinge}}
                                             </div>
                                     </div>
 
                                 </div>
                                 <div class="span4 well " ng-show="whingePools[$index+2]" >
-                                    <h2>{{whingePools[$index+2].Title}}</h2>
-                                    <div ng-init="currentWhingePool=whingePools[$index+2].Title"></div>
+                                    <h2>{{whingePools[$index+2].Name}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index+2].Name"></div>
                                     <div class="striped" ng-controller="whingesByWhingePoolController">
                                             <div ng-repeat="whinge in whinges">
-                                                {{whinge.Text}}
+                                                {{whinge.Whinge}}
                                             </div>
                                     </div>
 
