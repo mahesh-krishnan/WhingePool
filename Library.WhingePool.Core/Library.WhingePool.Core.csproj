@@ -126,7 +126,6 @@
     <Compile Include="Tables\WhingesByWhingePoolTable.cs" />
     <Compile Include="Entities\WhingesByWhingerEntity.cs" />
     <Compile Include="Tables\WhingesByWhingerTable.cs" />
-    <Compile Include="Tables\WhingesTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

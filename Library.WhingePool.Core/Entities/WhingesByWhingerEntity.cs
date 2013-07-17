@@ -4,7 +4,9 @@
     {
         public string Whinge { get; set; }
 
-        public string WhingePool
+        public string WhingePool { get; set; }
+
+        public string Whinger
         {
             get
             {

@@ -12,15 +12,12 @@ namespace WhingePool.Core.Configuration
 
         private readonly WhingesByWhingerTable _whingesByWhingerTable;
 
-        private readonly WhingesTable _whingesTable;
 
         public WhingePoolApplicationContext(IWhingePoolConfiguration configuration)
             : base(configuration)
         {
             WhingePoolConfiguration = configuration;
 
-            _whingesTable = new WhingesTable(CloudStorageAccount,
-                                             configuration.WhingesTableName);
 
             _whingersTable = new WhingersTable(CloudStorageAccount,
                                                configuration.WhingersTableName);
@@ -35,13 +32,7 @@ namespace WhingePool.Core.Configuration
                                                                      configuration.WhingesByWhingePoolTableName);
         }
 
-        public WhingesTable WhingesTable
-        {
-            get
-            {
-                return _whingesTable;
-            }
-        }
+
 
         public WhingersTable WhingersTable
         {

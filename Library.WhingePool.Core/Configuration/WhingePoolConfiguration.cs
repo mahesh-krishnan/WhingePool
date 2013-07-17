@@ -1,10 +1,10 @@
 ﻿namespace WhingePool.Core.Configuration
 {
-    internal class WhingePoolConfiguration : IWhingePoolConfiguration
+    public class WhingePoolConfiguration : IWhingePoolConfiguration
     {
         public WhingePoolConfiguration() {}
 
-        internal WhingePoolConfiguration(IAzureStorageConfiguration azureStorageConfiguration,
+        public WhingePoolConfiguration(IAzureStorageConfiguration azureStorageConfiguration,
                                          IPegasusConfiguration pegasusConfiguration,
                                          IWhingePoolConfiguration whingePoolConfiguration)
         {
