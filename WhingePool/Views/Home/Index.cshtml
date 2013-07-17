@@ -16,14 +16,12 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span3" ng-init="param='@User.Identity.GetUserName()';">
-                <div class="table-striped" ng-controller="whingesController">
+                <div class="striped" ng-controller="whingesController">
                     <h2>My Whinges</h2>
-                    <table class="table-striped">
-                        <tr ng-repeat="whinge in whinges">
-                            <td>{{whinge.Text}}<span class="label">{{whinge.WhingePool}}</span>
-                            </td>
-                        </tr>
-                    </table>
+                    <div ng-repeat="whinge in whinges">
+                        {{whinge.Text}}
+                    </div>
+                
                 </div>
 
             </div>
@@ -48,43 +46,34 @@
                       <span ng-switch on="$index % 3">
                         <span ng-switch-when="0">
                             <hr />
-                            <div class="row" style="padding-left: 30px; ">
-                                <div class="span4 well " >
+                            <div class="row" style="padding-left: 30px">
+                                <div class="span4 well ">
+                                    <h2>{{whingePools[$index].Title}}</h2>
+                                    <div ng-init="currentWhingePool=whingePools[$index].Title"></div>
+                                    <div class="striped" ng-controller="whingesByWhingePoolController">
+                                        <div ng-repeat="whinge in whinges">
+                                            {{whinge.Text}}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="span4 well "  ng-show="whingePools[$index+1]" >
                                     <h2>{{whingePools[$index+1].Title}}</h2>
                                     <div ng-init="currentWhingePool=whingePools[$index+1].Title"></div>
-                                    <div class="table-striped" ng-controller="whingesByWhingePoolController">
-                                        <table class="table-striped">
-                                            <tr ng-repeat="whinge in whinges">
-                                                <td>{{whinge.Text}}
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="striped" ng-controller="whingesByWhingePoolController">
+                                            <div ng-repeat="whinge in whinges">
+                                                {{whinge.Text}}
+                                            </div>
                                     </div>
 
                                 </div>
-                                <div class="span4 well "  ng-show="whingePools[$index+2]">
+                                <div class="span4 well " ng-show="whingePools[$index+2]" >
                                     <h2>{{whingePools[$index+2].Title}}</h2>
                                     <div ng-init="currentWhingePool=whingePools[$index+2].Title"></div>
-                                    <div class="table-striped" ng-controller="whingesByWhingePoolController">
-                                        <table class="table-striped">
-                                            <tr ng-repeat="whinge in whinges">
-                                                <td>{{whinge.Text}}
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                </div>
-                                <div class="span4 well " ng-show="whingePools[$index+3]">
-                                    <h2>{{whingePools[$index+3].Title}}</h2>
-                                    <div ng-init="currentWhingePool=whingePools[$index+3].Title"></div>
-                                    <div class="table-striped" ng-controller="whingesByWhingePoolController">
-                                        <table class="table-striped">
-                                            <tr ng-repeat="whinge in whinges">
-                                                <td>{{whinge.Text}}
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="striped" ng-controller="whingesByWhingePoolController">
+                                            <div ng-repeat="whinge in whinges">
+                                                {{whinge.Text}}
+                                            </div>
                                     </div>
 
                                 </div>
@@ -98,29 +87,6 @@
         </div>
 
     </div>
-@*<div class="row" ng-init="param='@User.Identity.GetUserName()';">
-    <div class="span4  table-striped" ng-controller="whingePoolsByUserController">
-        <h2>My Whinge Pools</h2>
-        <div class="control-list" ng-repeat="whingePool in whingePools">
-            <a class="btn" ng-href="/WhingePools/{{whingePool.Title}}">{{whingePool.Title}}
-            </a>
-        </div>
-    </div>
-    <div class="span4" ng-init="param='@User.Identity.GetUserName()';">
-        <h2>Join WhingePools</h2>
-        <p>You need to join Whinge Pools to whinge propertly. </p>
-        <form ng-controller="whingePoolsController">
-            <fieldset>
-                <label for="joinButton">
-                    Whinge Pool to join
-                </label>
-                <div>
-                    <input type="text" ng-model="selected" typeahead="whingePool.Title for whingePool in whingePools | filter:$viewValue">
-                </div>
-                <button id="joinButton" type="submit" class="btn btn-primary" ng-click="joinWhingePool(selected)">Join</button>
-            </fieldset>
-        </form>
-    </div>
-</div>*@
+
 
 }
