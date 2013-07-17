@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace WebApplication1
+namespace WhingePool
 {
     public partial class Startup
     {
@@ -9,24 +9,14 @@ namespace WebApplication1
         {
             // Enable the application to use a cookie to store information for the signed in user
             app.UseApplicationSignInCookie();
-            
+
             // Enable the application to use a cookie to temporarily store information about a user logging in with a third party login provider
             app.UseExternalSignInCookie();
 
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "JsYU5yR1tZMrnKNKPzIvQg",
+               consumerSecret: "TQ9UX1B7IsgS9AUfgeMJKrC9ZwrKdZwSQDKiaXb0");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
-
-            //app.UseGoogleAuthentication();
         }
     }
 }

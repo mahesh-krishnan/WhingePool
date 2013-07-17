@@ -1,49 +1,50 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
-using WebApplication1.Models;
+using WhingePool.Models;
 
-namespace WebApplication1.Controllers
+namespace WhingePool.Controllers
 {
     public class WhingePoolController : ApiController
     {
-        private static readonly List<WhingePool> WhingePools = new List<WhingePool>
+        private static readonly List<Models.WhingePool> WhingePools = new List<Models.WhingePool>
         {
-            new WhingePool
+            new Models.WhingePool
             {
                 Id = "1",
                 Title = "Work",
                 Description = "Some Description",
                 Members = 10
             },
-            new WhingePool
+            new Models.WhingePool
             {
                 Id = "2",
                 Title = "Life",
                 Description = "Some Description about life",
                 Members = 10
             },
-            new WhingePool
+            new Models.WhingePool
             {
                 Id = "3",
                 Title = "Telstra",
                 Description = "Some Description about your favourite telecom company",
                 Members = 10
             },
-            new WhingePool
+            new Models.WhingePool
             {
                 Id = "4",
                 Title = "Others",
                 Description = "Everythig else",
                 Members = 10
             },
-            new WhingePool
+            new Models.WhingePool
             {
                 Id = "5",
                 Title = "Telstra",
                 Description = "Everythig else",
                 Members = 10
             },
-            new WhingePool
+            new Models.WhingePool
             {
                 Id = "6",
                 Title = "Politics",
@@ -52,22 +53,22 @@ namespace WebApplication1.Controllers
             },
         };
 
-        public static readonly Dictionary<string, List<WhingePool>> UserWhingePools = new Dictionary
-            <string, List<WhingePool>>
+        public static readonly Dictionary<string, List<Models.WhingePool>> UserWhingePools = new Dictionary
+            <string, List<Models.WhingePool>>
         {
-            {"Mags", new List<WhingePool> {WhingePools[0], WhingePools[1], WhingePools[2], WhingePools[3]}}
+            {"MaheshKrishnan", new List<Models.WhingePool> {WhingePools[0], WhingePools[1], WhingePools[2], WhingePools[3]}}
         };
 
         // GET api/whingepool
-        public IEnumerable<WhingePool> Get()
+        public IEnumerable<Models.WhingePool> Get()
         {
             return WhingePools;
         }
 
         // GET api/whingepool/5
-        public IEnumerable<WhingePool> Get(string id)
+        public IEnumerable<Whinge> Get(string id)
         {
-            return UserWhingePools[id] ?? new List<WhingePool>();
+            return WhingeController.Whinges.Where(_ => _.WhingePool == id);
         }
 
         // POST api/whingepool
@@ -75,9 +76,9 @@ namespace WebApplication1.Controllers
         {
             if (UserWhingePools[value.UserId] == null)
             {
-                UserWhingePools[value.UserId] = new List<WhingePool>();
+                UserWhingePools[value.UserId] = new List<Models.WhingePool>();
             }
-            UserWhingePools[value.UserId].Add(new WhingePool { Title = value.WhingePool });
+            UserWhingePools[value.UserId].Add(new Models.WhingePool { Title = value.WhingePool });
         }
 
 

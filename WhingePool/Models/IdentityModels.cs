@@ -9,7 +9,7 @@ using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace WebApplication1.Models 
+namespace WhingePool.Models 
 {
     // Modify the User class to add extra user information
     public class User : IUser

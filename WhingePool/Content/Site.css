@@ -33,3 +33,17 @@ input[type="checkbox"].input-validation-error {
   background-color: white;
   border-style:none;
 }
+
+.striped div:nth-child(odd) {
+  background-color: #3a3f44;
+}
+
+.col{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    background-color:#ffc;
+}
+
+.row{
+    overflow: hidden; 
+}

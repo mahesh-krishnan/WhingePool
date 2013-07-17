@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
-using WebApplication1.Models;
+using WhingePool.Models;
 
-namespace WebApplication1.Controllers
+namespace WhingePool.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -202,6 +202,12 @@ namespace WebApplication1.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        [AllowAnonymous]
+        public ActionResult TwitterLogin()
+        {
+            return ExternalLogin("Twitter", "Twitter");
         }
 
         //

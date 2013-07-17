@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebApplication1.Controllers
+namespace WhingePool.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,14 +15,12 @@ namespace WebApplication1.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
         public ActionResult WhingePools()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
