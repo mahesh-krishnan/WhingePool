@@ -1,9 +1,6 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
-using WhingePool.Core;
 using WhingePool.Core.Entities;
-using WhingePool.Models;
 using WhingePool.Repository;
 
 namespace WhingePool.Controllers
@@ -23,8 +20,6 @@ namespace WhingePool.Controllers
             var repository = new WhingeRepository();
             return repository.GetWhingesInWhingePool(id);
         }
-
-
 
     }
 }
