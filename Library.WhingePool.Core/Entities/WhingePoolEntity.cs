@@ -2,9 +2,13 @@
 
 using Microsoft.WindowsAzure.Storage.Table;
 
+using Newtonsoft.Json;
+
+using WhingePool.Core.API;
+
 namespace WhingePool.Core.Entities
 {
-    public class WhingePoolEntity : TableEntity
+    public class WhingePoolEntity : TableEntity, IWhingePool
     {
         public WhingePoolEntity()
         {
@@ -21,6 +25,11 @@ namespace WhingePool.Core.Entities
             {
                 RowKey = value;
             }
+        }
+
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this);
         }
     }
 }

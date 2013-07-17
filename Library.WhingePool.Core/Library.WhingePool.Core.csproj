@@ -90,6 +90,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\ICommandService.cs" />
+    <Compile Include="API\IWhingePool.cs" />
+    <Compile Include="API\IWhingePoolService.cs" />
+    <Compile Include="API\IWhinger.cs" />
+    <Compile Include="API\IWhingerService.cs" />
+    <Compile Include="Commands\EnsureWhingePoolCommand.cs" />
+    <Compile Include="Commands\EnsureWhingerCommand.cs" />
     <Compile Include="Configuration\IAzureStorageConfiguration.cs" />
     <Compile Include="Configuration\IPegasusConfiguration.cs" />
     <Compile Include="Configuration\IWhingePoolConfiguration.cs" />
@@ -100,7 +107,9 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandArgument.cs" />
     <Compile Include="Commands\SaveResult.cs" />
-    <Compile Include="Commands\WhingeCommand.cs" />
+    <Compile Include="Commands\SaveWhingeCommand.cs" />
+    <Compile Include="WhingePoolService.cs" />
+    <Compile Include="WhingerService.cs" />
     <Compile Include="WhingeService.cs" />
     <Compile Include="Configuration\WhingePoolConfiguration.cs" />
     <Compile Include="Commands\ISaveResult.cs" />

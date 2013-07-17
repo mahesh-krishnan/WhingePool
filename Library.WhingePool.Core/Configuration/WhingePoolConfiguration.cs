@@ -2,6 +2,8 @@
 {
     internal class WhingePoolConfiguration : IWhingePoolConfiguration
     {
+        public WhingePoolConfiguration() {}
+
         internal WhingePoolConfiguration(IAzureStorageConfiguration azureStorageConfiguration,
                                          IPegasusConfiguration pegasusConfiguration,
                                          IWhingePoolConfiguration whingePoolConfiguration)

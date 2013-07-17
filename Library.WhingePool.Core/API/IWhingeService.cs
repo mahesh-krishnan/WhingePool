@@ -1,9 +1,4 @@
-﻿using WhingePool.Core.Commands;
-
-namespace WhingePool.Core.API
+﻿namespace WhingePool.Core.API
 {
-    public interface IWhingeService
-    {
-        ISaveResult Save(IWhinge whinge);
-    }
+    public interface IWhingeService : ICommandService<IWhinge> {}
 }

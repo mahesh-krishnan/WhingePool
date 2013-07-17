@@ -4,18 +4,18 @@ using WhingePool.Core.Configuration;
 
 namespace WhingePool.Core
 {
-    public class WhingeService : IWhingeService
+    public class WhingerService : IWhingerService
     {
-        public WhingeService(WhingePoolApplicationContext context)
+        public WhingerService(WhingePoolApplicationContext context)
         {
             Context = context;
         }
 
         public WhingePoolApplicationContext Context { get; private set; }
 
-        public ISaveResult Save(IWhinge whinge)
+        public ISaveResult Save(IWhinger whinger)
         {
-            var command = new SaveWhingeCommand(whinge);
+            var command = new EnsureWhingerCommand(whinger);
 
             Context.ScheduledTasksQueue.AddMessage(command);
 

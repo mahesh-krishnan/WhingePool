@@ -4,6 +4,6 @@ namespace WhingePool.Core.API
 {
     public interface IWhinge : ICommandArgument
     {
-        string WhingeText { get; set; }
+        string Whinge { get; set; }
     }
 }

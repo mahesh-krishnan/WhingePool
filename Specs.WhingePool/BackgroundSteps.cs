@@ -43,16 +43,16 @@ namespace Specs.WhingePool
             _whingePoolConfiguration = table.CreateInstance<WhingePoolConfiguration>();
         }
 
-        [Given(@"An WhingePoolApplicationContext")]
+        [Given(@"An ApplicationContext")]
         public void GivenAnApplicationContext()
         {
             var configuration = new WhingePoolConfiguration(_azureStorageConfiguration,
                                                             _pegasusConfiguration,
                                                             _whingePoolConfiguration);
 
-            ScenarioContext.Current["WhingePoolApplicationContext"] = new WhingePoolApplicationContext(configuration);
+            ScenarioContext.Current["ApplicationContext"] = new WhingePoolApplicationContext(configuration);
 
-            _whingePoolApplicationContext = ScenarioContext.Current.Get<WhingePoolApplicationContext>("WhingePoolApplicationContext");
+            _whingePoolApplicationContext = ScenarioContext.Current.Get<WhingePoolApplicationContext>("ApplicationContext");
         }
 
         [Given(@"An Empty WhingersTable")]

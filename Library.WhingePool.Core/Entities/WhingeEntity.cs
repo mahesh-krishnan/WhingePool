@@ -1,8 +1,13 @@
 ﻿using System;
 
+using Newtonsoft.Json;
+
+using WhingePool.Core.API;
+
 namespace WhingePool.Core.Entities
 {
-    public class WhingeEntity : ReverseChronologicalTableEntity
+    public class WhingeEntity : ReverseChronologicalTableEntity,
+                                IWhinge
     {
         public WhingeEntity()
         {
@@ -12,5 +17,10 @@ namespace WhingePool.Core.Entities
         public string Whinge { get; set; }
 
         public string WhingePool { get; set; }
+
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

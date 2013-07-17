@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="BackgroundSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveWhingeSteps.cs" />
     <Compile Include="Whinge.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
