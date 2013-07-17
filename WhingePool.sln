@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BAE1E8
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.WhingePool.Core", "Library.WhingePool.Core\Library.WhingePool.Core.csproj", "{70F0BBAE-21A3-4CF2-B438-A0483B84A373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specs.WhingePool", "Specs.WhingePool\Specs.WhingePool.csproj", "{450113CE-F971-40D3-AFE7-63905B62860E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{08A8EED3-3798-4B94-9EDD-41A1C49B141E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08A8EED3-3798-4B94-9EDD-41A1C49B141E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08A8EED3-3798-4B94-9EDD-41A1C49B141E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F0BBAE-21A3-4CF2-B438-A0483B84A373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F0BBAE-21A3-4CF2-B438-A0483B84A373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F0BBAE-21A3-4CF2-B438-A0483B84A373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F0BBAE-21A3-4CF2-B438-A0483B84A373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450113CE-F971-40D3-AFE7-63905B62860E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450113CE-F971-40D3-AFE7-63905B62860E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450113CE-F971-40D3-AFE7-63905B62860E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450113CE-F971-40D3-AFE7-63905B62860E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
