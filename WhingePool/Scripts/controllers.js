@@ -4,44 +4,46 @@
 var whingePoolUrl = '/api/WhingePool/';
 var whingeUrl = '/api/Whinge/';
 
-whingePoolApp.factory('whingePoolFactory', function($http) {
+whingePoolApp.factory('whingePoolFactory', function ($http) {
     return {
-        getWhingePools: function(userName) {
+
+        getWhingePools: function (userName) {
             return $http.get(whingePoolUrl);
         },
-
-        getWhingePoolsByUser: function(userName) {
+        
+        getWhingePoolsByUser: function (userName) {
             return $http.get(whingePoolUrl + userName);
         },
-
-        joinWhingePool: function(whingePool) {
+        
+        joinWhingePool: function (whingePool) {
             return $http.post(whingePoolUrl, whingePool);
         }
     };
 });
 
-whingePoolApp.factory('whingeFactory', function($http) {
+whingePoolApp.factory('whingeFactory', function ($http) {
     return {
-        getWhingesByUser: function(userName) {
+
+        getWhingesByUser: function (userName) {
             return $http.get(whingeUrl + userName);
         },
-        getWhingesByWhingePool: function(whingePoolName) {
+        getWhingesByWhingePool: function (whingePoolName) {
             return $http.get(whingePoolUrl + whingePoolName);
         },
 
-        addWhinge: function(whinge) {
+        addWhinge: function (whinge) {
             return $http.post(whingeUrl, whinge);
         }
     };
 });
 
-whingePoolApp.factory('notificationFactory', function() {
+whingePoolApp.factory('notificationFactory', function () {
 
     return {
-        success: function(text) {
+        success: function (text) {
             toastr.success(text);
         },
-        error: function(text) {
+        error: function (text) {
             toastr.error(text, "Error sending whinge!");
         }
     };
@@ -54,22 +56,22 @@ whingePoolApp.controller("whingePoolsController",
         $scope.selected = "";
 
 
-        var getWhingePoolsSuccessCallback = function(data, status) {
+        var getWhingePoolsSuccessCallback = function (data, status) {
             $scope.whingePools = data;
         };
-        var successPostCallback = function(data, status, headers, config) {
-            successCallback(data, status, headers, config).success(function() {
+        var successPostCallback = function (data, status, headers, config) {
+            successCallback(data, status, headers, config).success(function () {
                 $scope.whingePools = {};
             });
         };
 
-        var successCallback = function(data, status, headers, config) {
+        var successCallback = function (data, status, headers, config) {
             notificationFactory.success("Saved!");
 
             return whingePoolFactory.getWhingePools().success(getWhingePoolsSuccessCallback).error(errorCallback);
         };
 
-        var errorCallback = function(data, status, headers, config) {
+        var errorCallback = function (data, status, headers, config) {
             notificationFactory.error(data.ExceptionMessage);
         };
         //var userName = encodeURIComponent($scope.param);
@@ -85,16 +87,17 @@ whingePoolApp.controller("whingePoolsController",
 
 whingePoolApp.controller("whingePoolsByUserController",
     function whingePoolsByUserController($scope, whingePoolFactory, notificationFactory) {
-
+        
         $scope.whingePools = [];
 
 
-        var getWhingePoolsSuccessCallback = function(data, status) {
+        var getWhingePoolsSuccessCallback = function (data, status) {
             $scope.whingePools = data;
         };
 
 
-        var errorCallback = function(data, status, headers, config) {
+
+        var errorCallback = function (data, status, headers, config) {
             notificationFactory.error(data.ExceptionMessage);
         };
 
@@ -102,34 +105,36 @@ whingePoolApp.controller("whingePoolsByUserController",
         var userName = encodeURIComponent($scope.param);
 
         whingePoolFactory.getWhingePoolsByUser(userName).success(getWhingePoolsSuccessCallback).error(errorCallback);
+
  
 
     });
 
-whingePoolApp.controller("whingesController",    
+whingePoolApp.controller("whingesController",
+    
     function whingesController($scope, whingeFactory, notificationFactory) {
         $scope.newWhinge = {};
         $scope.whinges = [];
 
-        var getWhingesSuccessCallback = function(data, status) {
+        var getWhingesSuccessCallback = function (data, status) {
             $scope.whinges = data;
 
         };
 
-        var successCallback = function(data, status, headers, config) {
+        var successCallback = function (data, status, headers, config) {
             notificationFactory.success("Saved");
 
             return whingeFactory.getWhinges($scope.param).success(getWhingesSuccessCallback).error(errorCallback);
         };
 
-        var successPostCallback = function(data, status, headers, config) {
+        var successPostCallback = function (data, status, headers, config) {
             notificationFactory.success("Successfully whinged!");
             $scope.whinges.push($scope.newWhinge);
             //whingeFactory.getWhingesByUser(userName).success(getWhingesSuccessCallback).error(errorCallback);
             $scope.newWhinge = {};
         };
 
-        var errorCallback = function(data, status, headers, config) {
+        var errorCallback = function (data, status, headers, config) {
             notificationFactory.error(data.ExceptionMessage);
         };
 
@@ -138,37 +143,38 @@ whingePoolApp.controller("whingesController",
 
         whingeFactory.getWhingesByUser(userName).success(getWhingesSuccessCallback).error(errorCallback);
 
-        $scope.addWhinge = function() {
+        $scope.addWhinge = function () {
             whingeFactory.addWhinge($scope.newWhinge).success(successPostCallback).error(errorCallback);
         };
 
 
     });
-whingePoolApp.controller("whingesController",    
+whingePoolApp.controller("whingesController",
+    
     function whingesController($scope, whingeFactory, notificationFactory) {
         $scope.newWhinge = {};
         $scope.whinges = [];
 
 
-        var getWhingesSuccessCallback = function(data, status) {
+        var getWhingesSuccessCallback = function (data, status) {
             $scope.whinges = data;
 
         };
 
-        var successCallback = function(data, status, headers, config) {
+        var successCallback = function (data, status, headers, config) {
             notificationFactory.success("Saved");
 
             return whingeFactory.getWhinges($scope.param).success(getWhingesSuccessCallback).error(errorCallback);
         };
 
-        var successPostCallback = function(data, status, headers, config) {
+        var successPostCallback = function (data, status, headers, config) {
             notificationFactory.success("Successfully whinged!");
             $scope.whinges.push($scope.newWhinge);
             //whingeFactory.getWhingesByUser(userName).success(getWhingesSuccessCallback).error(errorCallback);
             $scope.newWhinge = {};
         };
 
-        var errorCallback = function(data, status, headers, config) {
+        var errorCallback = function (data, status, headers, config) {
             notificationFactory.error(data.ExceptionMessage);
         };
 
@@ -177,7 +183,7 @@ whingePoolApp.controller("whingesController",
 
         whingeFactory.getWhingesByUser(userName).success(getWhingesSuccessCallback).error(errorCallback);
 
-        $scope.addWhinge = function() {
+        $scope.addWhinge = function () {
             $scope.newWhinge.Whinger = $scope.param;
             whingeFactory.addWhinge($scope.newWhinge).success(successPostCallback).error(errorCallback);
         };
@@ -186,17 +192,18 @@ whingePoolApp.controller("whingesController",
     });
 
 whingePoolApp.controller("whingesByWhingePoolController",
+
     function whingesByWhingePoolController($scope, whingeFactory, notificationFactory) {
         $scope.newWhinge = {};
         $scope.whinges = [];
 
-        var getWhingesSuccessCallback = function(data, status) {
+        var getWhingesSuccessCallback = function (data, status) {
             $scope.whinges = data;
 
         };
 
 
-        var errorCallback = function(data, status, headers, config) {
+        var errorCallback = function (data, status, headers, config) {
             notificationFactory.error(data.ExceptionMessage);
         };
 
