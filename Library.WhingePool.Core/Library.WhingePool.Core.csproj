@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70F0BBAE-21A3-4CF2-B438-A0483B84A373}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WhingePool.Core</RootNamespace>
+    <AssemblyName>Library.WhingePool.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BrightSword.SwissKnife">
+      <HintPath>..\packages\BrightSword.SwissKnife.1.0.22\lib\net40\BrightSword.SwissKnife.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.AzureClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.AzureClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.AzureCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.AzureCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.DistributedCache, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.Web.DistributedCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.2.0.6.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsFabric.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.WindowsFabric.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsFabric.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.WindowsFabric.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pegasus\API\AssemblyFailedToLoadException.cs" />
+    <Compile Include="Pegasus\API\FailedToCreateCommandHandlerException.cs" />
+    <Compile Include="Pegasus\API\FailedToDownloadAssemblyException.cs" />
+    <Compile Include="Pegasus\API\FailedToLoadDownloadedAssemblyException.cs" />
+    <Compile Include="Pegasus\API\NoRegisteredHandlerFoundException.cs" />
+    <Compile Include="Pegasus\API\ICommandService.cs" />
+    <Compile Include="API\IWhingePool.cs" />
+    <Compile Include="API\IWhingePoolService.cs" />
+    <Compile Include="API\IWhinger.cs" />
+    <Compile Include="API\IWhingerService.cs" />
+    <Compile Include="Pegasus\API\ICommandHandlerConfiguration.cs" />
+    <Compile Include="Pegasus\API\ICommandHandlerContext.cs" />
+    <Compile Include="Pegasus\API\IKeyValueStore.cs" />
+    <Compile Include="Pegasus\CommandProcessor\ForeverRunningRole.cs" />
+    <Compile Include="Pegasus\CommandProcessor\ForeverRunner.cs" />
+    <Compile Include="Pegasus\CommandProcessor\RoleBase.cs" />
+    <Compile Include="Commands\EnsureWhingePoolCommand.cs" />
+    <Compile Include="Commands\EnsureWhingerCommand.cs" />
+    <Compile Include="API\WhingeTooLongException.cs" />
+    <Compile Include="Pegasus\Configuration\CloudRunnerCommandResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pegasus\Configuration\CloudRunnerCommandsQueue.cs" />
+    <Compile Include="Pegasus\Configuration\CommandHandler.cs" />
+    <Compile Include="Pegasus\Configuration\CommandHandlerContext.cs" />
+    <Compile Include="Pegasus\Configuration\CloudRunnerCommandResultsTable.cs" />
+    <Compile Include="Pegasus\Configuration\CommandHandlersTable.cs" />
+    <Compile Include="Configuration\CompletionStatus.cs" />
+    <Compile Include="Pegasus\API\IAzureStorageConfiguration.cs" />
+    <Compile Include="Pegasus\API\ICommandQueueConfiguration.cs" />
+    <Compile Include="Configuration\IWhingePoolConfiguration.cs" />
+    <Compile Include="Pegasus\Commands\Command.cs" />
+    <Compile Include="Pegasus\Configuration\AzureStorageContext.cs" />
+    <Compile Include="Pegasus\API\ICloudRunnerContext.cs" />
+    <Compile Include="Pegasus\API\IAzureStorageContext.cs" />
+    <Compile Include="Pegasus\Configuration\CloudRunnerContext.cs" />
+    <Compile Include="Configuration\WhingePoolApplicationContext.cs" />
+    <Compile Include="Pegasus\API\ICommand.cs" />
+    <Compile Include="Pegasus\API\ICommandArgument.cs" />
+    <Compile Include="Pegasus\Commands\SaveResult.cs" />
+    <Compile Include="Commands\SaveWhingeCommand.cs" />
+    <Compile Include="Pegasus\API\ICommandHandler.cs" />
+    <Compile Include="Pegasus\Services\CommandHandlerService.cs" />
+    <Compile Include="Pegasus\Utilities\AzureCommandQueue.cs" />
+    <Compile Include="Pegasus\Utilities\AzureTableWrapper.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\WhingePoolService.cs" />
+    <Compile Include="Services\WhingerService.cs" />
+    <Compile Include="Services\WhingeService.cs" />
+    <Compile Include="Configuration\WhingePoolConfiguration.cs" />
+    <Compile Include="Pegasus\API\ISaveResult.cs" />
+    <Compile Include="API\IWhinge.cs" />
+    <Compile Include="API\IWhingeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pegasus\Entities\ReverseChronologicalTableEntity.cs" />
+    <Compile Include="Entities\WhingeEntity.cs" />
+    <Compile Include="Entities\WhingePoolEntity.cs" />
+    <Compile Include="Tables\WhingePoolsTable.cs" />
+    <Compile Include="Entities\WhingerEntity.cs" />
+    <Compile Include="Tables\WhingersTable.cs" />
+    <Compile Include="Entities\WhingesByWhingePoolEntity.cs" />
+    <Compile Include="Tables\WhingesByWhingePoolTable.cs" />
+    <Compile Include="Entities\WhingesByWhingerEntity.cs" />
+    <Compile Include="Tables\WhingesByWhingerTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe" />
+    <Content Include="Microsoft.WindowsAzure.Caching\PerformanceCounters.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

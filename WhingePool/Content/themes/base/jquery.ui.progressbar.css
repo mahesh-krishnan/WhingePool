@@ -1,0 +1,29 @@
+/*!
+ * jQuery UI Progressbar 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Progressbar#theming
+ */
+.ui-progressbar {
+    height: 2em;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ui-progressbar .ui-progressbar-value {
+    height: 100%;
+    margin: -1px;
+}
+
+.ui-progressbar .ui-progressbar-overlay {
+    background: url("images/animated-overlay.gif");
+    filter: alpha(opacity=25);
+    height: 100%;
+    opacity: 0.25;
+}
+
+.ui-progressbar-indeterminate .ui-progressbar-value { background-image: none; }

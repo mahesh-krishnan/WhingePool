@@ -1,0 +1,90 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (!Request.IsAuthenticated)
+{
+    <div class="hero-unit">
+        <h1>WhingePool</h1>
+        <p class="lead">WhingePool allows you to whinge and get things off your chest, so you can continue on with the rest of your life.</p>
+        <p><a href="About.cshtml" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    </div>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3" ng-init="param='@User.Identity.GetUserName()';">
+                <div class="striped" ng-controller="whingesController">
+                    <h2>My Whinges</h2>
+                    <div ng-repeat="whinge in whinges">
+                        {{whinge.Whinge}}
+                    </div>
+                
+                </div>
+
+            </div>
+            <div class="span9">
+                <div class="hero-unit">
+                    <h1>WhingePool</h1>
+                    <div class="row" ng-init="param='@User.Identity.GetUserName()'">
+
+                        <form ng-controller="whingesController">
+                            <fieldset>
+                                <textarea placeholder="Type a 150 character whinge…" class="input-block-level" ng-model="newWhinge.Whinge"></textarea>
+                                <button type="submit" class="btn btn-primary pull-right" ng-click="addWhinge(newWhinge)">Whinge!</button>
+                                <span ng-controller="whingePoolsController" class="pull-right">
+                                    <input type="text" placeholder="Type the WhingePool" ng-model="newWhinge.WhingePool" typeahead="whingePool.Name for whingePool in whingePools | filter:$viewValue">
+                                </span>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div ng-controller="whingePoolsController">
+                    <div ng-repeat="whingePool in whingePools">
+                        <span ng-switch on="$index % 3">
+                            <span ng-switch-when="0">
+                                <hr />
+                                <div class="row" style="padding-left: 30px">
+                                    <div class="span4 well ">
+                                        <h2>{{whingePools[$index].Name}}</h2>
+                                        <div ng-init="currentWhingePool=whingePools[$index].Name"></div>
+                                        <div class="striped" ng-controller="whingesByWhingePoolController">
+                                            <div ng-repeat="whinge in whinges">
+                                                {{whinge.Whinge}}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="span4 well "  ng-show="whingePools[$index+1]" >
+                                        <h2>{{whingePools[$index+1].Name}}</h2>
+                                        <div ng-init="currentWhingePool=whingePools[$index+1].Name"></div>
+                                        <div class="striped" ng-controller="whingesByWhingePoolController">
+                                            <div ng-repeat="whinge in whinges">
+                                                {{whinge.Whinge}}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="span4 well " ng-show="whingePools[$index+2]" >
+                                        <h2>{{whingePools[$index+2].Name}}</h2>
+                                        <div ng-init="currentWhingePool=whingePools[$index+2].Name"></div>
+                                        <div class="striped" ng-controller="whingesByWhingePoolController">
+                                            <div ng-repeat="whinge in whinges">
+                                                {{whinge.Whinge}}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+
+    </div>
+}
