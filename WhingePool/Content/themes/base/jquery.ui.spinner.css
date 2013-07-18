@@ -1,0 +1,65 @@
+/*!
+ * jQuery UI Spinner 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Spinner#theming
+ */
+.ui-spinner {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+}
+
+.ui-spinner-input {
+    background: none;
+    border: none;
+    color: inherit;
+    margin: .2em 0;
+    margin-left: .4em;
+    margin-right: 22px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.ui-spinner-button {
+    cursor: default;
+    display: block;
+    font-size: .5em;
+    height: 50%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 16px;
+}
+/* more specificity required here to overide default borders */
+
+.ui-spinner a.ui-spinner-button {
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+}
+/* vertical centre icon */
+
+.ui-spinner .ui-icon {
+    left: 0;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+}
+
+.ui-spinner-up { top: 0; }
+
+.ui-spinner-down { bottom: 0; }
+
+/* TR overrides */
+
+.ui-spinner .ui-icon-triangle-1-s { /* need to fix icons sprite */background-position: -65px -16px; }

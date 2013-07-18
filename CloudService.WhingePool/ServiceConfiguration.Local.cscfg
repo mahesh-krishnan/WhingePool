@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ServiceConfiguration serviceName="CloudService.WhingePool" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="Worker.WhingePool.Main">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="StorageAccount" value="myobpdqaart" />
+      <Setting name="StorageAccountKey" value="MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA==" />
+      <Setting name="RegisteredCommandHandlersTableName" value="WhingePoolTestCommandHandlers" />
+      <Setting name="RegisteredCommandHandlersBlobContainerName" value="whingepool-test-command-handler-assemblies" />
+      <Setting name="CommandQueueName" value="whingepool-test-whinge-queue" />
+      <Setting name="CommandResultsTableName" value="WhingePoolTestCommandResults" />
+      <Setting name="WhingesTableName" value="WhingePoolTestWhinges" />
+      <Setting name="WhingersTableName" value="WhingePoolTestWhingers" />
+      <Setting name="WhingePoolsTableName" value="WhingePoolTestWhingePools" />
+      <Setting name="WhingesByWhingerTableName" value="WhingePoolTestWhingesByWhinger" />
+      <Setting name="WhingesByWhingePoolTableName" value="WhingePoolTestWhingesByWhingePool" />
+    <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" value="1" /></ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WhingePool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StorageAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">myobpdqaart</Value>
+    </Setting>
+    <Setting Name="StorageAccountKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA==</Value>
+    </Setting>
+    <Setting Name="RegisteredCommandHandlersTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestCommandHandlers</Value>
+    </Setting>
+    <Setting Name="RegisteredCommandHandlersBlobContainerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">whingepool-test-command-handler-assemblies</Value>
+    </Setting>
+    <Setting Name="CommandQueueName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">whingepool-test-whinge-queue</Value>
+    </Setting>
+    <Setting Name="CommandResultsTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestCommandResults</Value>
+    </Setting>
+    <Setting Name="WhingesTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestWhinges</Value>
+    </Setting>
+    <Setting Name="WhingersTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestWhingers</Value>
+    </Setting>
+    <Setting Name="WhingePoolsTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestWhingePools</Value>
+    </Setting>
+    <Setting Name="WhingesByWhingerTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestWhingesByWhinger</Value>
+    </Setting>
+    <Setting Name="WhingesByWhingePoolTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WhingePoolTestWhingesByWhingePool</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
