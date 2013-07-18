@@ -1,8 +1,4 @@
-﻿using System;
-
-using Microsoft.WindowsAzure.Storage.Table;
-
-using Newtonsoft.Json;
+﻿using Microsoft.WindowsAzure.Storage.Table;
 
 using WhingePool.Core.API;
 
@@ -13,18 +9,13 @@ namespace WhingePool.Core.Entities
     {
         public WhingePoolEntity()
         {
-            PartitionKey = DateTime.Today.ToString("s");
+            PartitionKey = "WhingePools";
         }
 
         public string Name
         {
             get { return RowKey; }
             set { RowKey = value; }
-        }
-
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this);
         }
     }
 }

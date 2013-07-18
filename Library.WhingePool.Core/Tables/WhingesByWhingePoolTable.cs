@@ -1,7 +1,8 @@
-﻿using Microsoft.WindowsAzure.Storage;
+﻿using BrightSword.Pegasus.Utilities;
+
+using Microsoft.WindowsAzure.Storage;
 
 using WhingePool.Core.Entities;
-using WhingePool.Core.Pegasus.Utilities;
 
 namespace WhingePool.Core.Tables
 {

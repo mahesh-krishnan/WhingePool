@@ -1,4 +1,4 @@
-﻿using WhingePool.Core.Pegasus.API;
+﻿using BrightSword.Pegasus.API;
 
 namespace WhingePool.Core.API
 {

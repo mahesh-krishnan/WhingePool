@@ -1,4 +1,5 @@
-﻿using WhingePool.Core.Pegasus.API;
+﻿using BrightSword.Pegasus.API;
+
 using WhingePool.Core.Properties;
 
 namespace WhingePool.Core.Configuration
@@ -22,7 +23,7 @@ namespace WhingePool.Core.Configuration
 
         public WhingePoolConfiguration(IAzureStorageConfiguration azureStorageConfiguration,
                                        ICommandHandlerConfiguration commandHandlerConfiguration,
-                                       ICommandQueueConfiguration commandQueue,
+                                       ICloudRunnerConfiguration commandQueue,
                                        IWhingePoolConfiguration whingePoolConfiguration)
         {
             StorageAccount = azureStorageConfiguration.StorageAccount;

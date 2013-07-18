@@ -1,9 +1,10 @@
-﻿using TechTalk.SpecFlow;
+﻿using BrightSword.Pegasus.API;
+
+using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
 using WhingePool.Core.Configuration;
 using WhingePool.Core.Entities;
-using WhingePool.Core.Pegasus.API;
 
 namespace Specs.WhingePool
 {
@@ -14,7 +15,7 @@ namespace Specs.WhingePool
 
         private ICommandHandlerConfiguration _commandHandlerConfiguration;
 
-        private ICommandQueueConfiguration _commandQueue;
+        private ICloudRunnerConfiguration _commandQueue;
 
         private WhingePoolApplicationContext _whingePoolApplicationContext;
         private IWhingePoolConfiguration _whingePoolConfiguration;

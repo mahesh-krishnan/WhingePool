@@ -1,5 +1,6 @@
-﻿using WhingePool.Core.Entities;
-using WhingePool.Core.Pegasus.API;
+﻿using BrightSword.Pegasus.API;
+
+using WhingePool.Core.Entities;
 
 namespace WhingePool.Core.API
 {

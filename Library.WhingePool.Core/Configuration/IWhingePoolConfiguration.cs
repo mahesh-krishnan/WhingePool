@@ -1,8 +1,8 @@
-﻿using WhingePool.Core.Pegasus.API;
+﻿using BrightSword.Pegasus.API;
 
 namespace WhingePool.Core.Configuration
 {
-    public interface IWhingePoolConfiguration : ICommandQueueConfiguration
+    public interface IWhingePoolConfiguration : ICloudRunnerConfiguration
     {
         string WhingesTableName { get; }
 

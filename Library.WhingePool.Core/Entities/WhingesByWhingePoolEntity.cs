@@ -1,4 +1,4 @@
-﻿using WhingePool.Core.Pegasus.Entities;
+﻿using BrightSword.Pegasus.Entities;
 
 namespace WhingePool.Core.Entities
 {

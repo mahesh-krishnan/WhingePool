@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <ServiceDefinition name="CloudService.WhingePool" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
-  <WorkerRole name="Worker.WhingePool.Main" vmsize="Small">
+  <WorkerRole name="Worker.WhingePool.Main" vmsize="ExtraSmall">
     <Imports>
       <Import moduleName="Diagnostics" />
     </Imports>
@@ -17,6 +16,10 @@
       <Setting name="WhingePoolsTableName" />
       <Setting name="WhingesByWhingerTableName" />
       <Setting name="WhingesByWhingePoolTableName" />
-    <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" /></ConfigurationSettings>
-  <Startup priority="-2"><Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" /></Startup></WorkerRole>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" />
+    </ConfigurationSettings>
+    <Startup priority="-2">
+      <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
+    </Startup>
+  </WorkerRole>
 </ServiceDefinition>

@@ -94,6 +94,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj">
+      <Project>{2cec902f-2efe-41dc-a733-0724ebb5cb8f}</Project>
+      <Name>Library.BrightSword.Pegasus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.WhingePool.Core\Library.WhingePool.Core.csproj">
       <Project>{70f0bbae-21a3-4cf2-b438-a0483b84a373}</Project>
       <Name>Library.WhingePool.Core</Name>

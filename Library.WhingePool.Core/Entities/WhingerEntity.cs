@@ -1,8 +1,6 @@
-﻿using System;
+﻿using BrightSword.Pegasus.API;
 
 using Microsoft.WindowsAzure.Storage.Table;
-
-using WhingePool.Core.Pegasus.API;
 
 namespace WhingePool.Core.Entities
 {
@@ -11,7 +9,7 @@ namespace WhingePool.Core.Entities
     {
         public WhingerEntity()
         {
-            PartitionKey = DateTime.Today.ToString("s");
+            PartitionKey = "Whingers";
         }
 
         public string TwitterHandle

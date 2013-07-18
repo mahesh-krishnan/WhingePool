@@ -1,4 +1,5 @@
-﻿using WhingePool.Core.Pegasus.Configuration;
+﻿using BrightSword.Pegasus.Configuration;
+
 using WhingePool.Core.Tables;
 
 namespace WhingePool.Core.Configuration
