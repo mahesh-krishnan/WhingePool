@@ -13,7 +13,7 @@ namespace Worker.WhingePool.Main
 
         public WorkerRole()
         {
-            _whingePoolApplicationContext = new WhingePoolApplicationContext();
+            _whingePoolApplicationContext = WhingePoolApplicationContext.CreateFromCloudConfiguration();
         }
 
         protected override ICloudRunnerContext Context

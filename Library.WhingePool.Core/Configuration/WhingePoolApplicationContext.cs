@@ -14,9 +14,6 @@ namespace WhingePool.Core.Configuration
 
         private readonly WhingesByWhingerTable _whingesByWhingerTable;
 
-        public WhingePoolApplicationContext()
-            : this(new WhingePoolConfiguration()) {}
-
         public WhingePoolApplicationContext(IWhingePoolConfiguration configuration)
             : base(configuration)
         {
@@ -51,6 +48,16 @@ namespace WhingePool.Core.Configuration
         public WhingesByWhingePoolTable WhingesByWhingePoolTable
         {
             get { return _whingesByWhingePoolTable; }
+        }
+
+        public static WhingePoolApplicationContext CreateFromApplicationSettings()
+        {
+            return new WhingePoolApplicationContext(WhingePoolConfiguration.CreateFromCloudConfiguration());
+        }
+
+        public static WhingePoolApplicationContext CreateFromCloudConfiguration()
+        {
+            return new WhingePoolApplicationContext(WhingePoolConfiguration.CreateFromCloudConfiguration());
         }
     }
 }

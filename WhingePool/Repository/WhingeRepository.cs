@@ -12,7 +12,7 @@ namespace WhingePool.Repository
     {
         public WhingeRepository()
         {
-            ApplicationContext = new WhingePoolApplicationContext();
+            ApplicationContext = WhingePoolApplicationContext.CreateFromApplicationSettings();
         }
 
         public WhingePoolApplicationContext ApplicationContext { get; set; }

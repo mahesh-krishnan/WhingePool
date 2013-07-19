@@ -29,6 +29,11 @@ namespace BrightSword.Pegasus.Configuration
         public Tuple<Command, CloudQueueMessage> DequeueCommand()
         {
             var message = Queue.GetMessage();
+            if (message == null)
+            {
+                return null;
+            }
+
             return new Tuple<Command, CloudQueueMessage>((Command) message,
                                                          message);
         }

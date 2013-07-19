@@ -10,6 +10,8 @@ namespace BrightSword.Pegasus.Commands
 {
     public class Command : ICommand
     {
+        public Command() {}
+
         protected Command(string commandArgumentTypeName,
                           string serializedCommandArgument,
                           string commandName = null)
@@ -21,13 +23,13 @@ namespace BrightSword.Pegasus.Commands
             SerializedCommandArgument = serializedCommandArgument;
         }
 
-        public Guid CommandId { get; private set; }
+        public Guid CommandId { get; set; }
 
-        public virtual string CommandName { get; private set; }
+        public virtual string CommandName { get; set; }
 
-        public string CommandArgumentTypeName { get; private set; }
+        public string CommandArgumentTypeName { get; set; }
 
-        public string SerializedCommandArgument { get; private set; }
+        public string SerializedCommandArgument { get; set; }
 
         public static explicit operator CloudQueueMessage(Command _this)
         {
@@ -36,6 +38,8 @@ namespace BrightSword.Pegasus.Commands
 
         public static explicit operator Command(CloudQueueMessage _this)
         {
+            if (_this == null) return null;
+
             return JsonConvert.DeserializeObject<Command>(_this.AsString);
         }
     }

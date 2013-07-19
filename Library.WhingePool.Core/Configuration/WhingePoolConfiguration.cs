@@ -1,25 +1,14 @@
 ﻿using BrightSword.Pegasus.API;
 
+using Microsoft.WindowsAzure;
+
 using WhingePool.Core.Properties;
 
 namespace WhingePool.Core.Configuration
 {
     public class WhingePoolConfiguration : IWhingePoolConfiguration
     {
-        public WhingePoolConfiguration()
-        {
-            StorageAccount = Settings.Default.StorageAccount;
-            StorageAccountKey = Settings.Default.StorageAccountKey;
-            RegisteredCommandHandlersTableName = Settings.Default.RegisteredCommandHandlersTableName;
-            RegisteredCommandHandlersBlobContainerName = Settings.Default.RegisteredCommandHandlersBlobContainerName;
-            CommandQueueName = Settings.Default.CommandQueueName;
-            CommandResultsTableName = Settings.Default.CommandResultsTableName;
-            WhingesTableName = Settings.Default.WhingesTableName;
-            WhingersTableName = Settings.Default.WhingersTableName;
-            WhingePoolsTableName = Settings.Default.WhingePoolsTableName;
-            WhingesByWhingerTableName = Settings.Default.WhingesByWhingerTableName;
-            WhingesByWhingePoolTableName = Settings.Default.WhingesByWhingePoolTableName;
-        }
+        private WhingePoolConfiguration() {}
 
         public WhingePoolConfiguration(IAzureStorageConfiguration azureStorageConfiguration,
                                        ICommandHandlerConfiguration commandHandlerConfiguration,
@@ -60,5 +49,41 @@ namespace WhingePool.Core.Configuration
         public string CommandQueueName { get; set; }
 
         public string CommandResultsTableName { get; set; }
+
+        public static WhingePoolConfiguration CreateFromApplicationSettings()
+        {
+            return new WhingePoolConfiguration
+                   {
+                       StorageAccount = Settings.Default.StorageAccount,
+                       StorageAccountKey = Settings.Default.StorageAccountKey,
+                       RegisteredCommandHandlersTableName = Settings.Default.RegisteredCommandHandlersTableName,
+                       RegisteredCommandHandlersBlobContainerName = Settings.Default.RegisteredCommandHandlersBlobContainerName,
+                       CommandQueueName = Settings.Default.CommandQueueName,
+                       CommandResultsTableName = Settings.Default.CommandResultsTableName,
+                       WhingesTableName = Settings.Default.WhingesTableName,
+                       WhingersTableName = Settings.Default.WhingersTableName,
+                       WhingePoolsTableName = Settings.Default.WhingePoolsTableName,
+                       WhingesByWhingerTableName = Settings.Default.WhingesByWhingerTableName,
+                       WhingesByWhingePoolTableName = Settings.Default.WhingesByWhingePoolTableName,
+                   };
+        }
+
+        public static WhingePoolConfiguration CreateFromCloudConfiguration()
+        {
+            return new WhingePoolConfiguration
+                   {
+                       StorageAccount = CloudConfigurationManager.GetSetting("StorageAccount"),
+                       StorageAccountKey = CloudConfigurationManager.GetSetting("StorageAccountKey"),
+                       RegisteredCommandHandlersTableName = CloudConfigurationManager.GetSetting("RegisteredCommandHandlersTableName"),
+                       RegisteredCommandHandlersBlobContainerName = CloudConfigurationManager.GetSetting("RegisteredCommandHandlersBlobContainerName"),
+                       CommandQueueName = CloudConfigurationManager.GetSetting("CommandQueueName"),
+                       CommandResultsTableName = CloudConfigurationManager.GetSetting("CommandResultsTableName"),
+                       WhingesTableName = CloudConfigurationManager.GetSetting("WhingesTableName"),
+                       WhingersTableName = CloudConfigurationManager.GetSetting("WhingersTableName"),
+                       WhingePoolsTableName = CloudConfigurationManager.GetSetting("WhingePoolsTableName"),
+                       WhingesByWhingerTableName = CloudConfigurationManager.GetSetting("WhingesByWhingerTableName"),
+                       WhingesByWhingePoolTableName = CloudConfigurationManager.GetSetting("WhingesByWhingePoolTableName"),
+                   };
+        }
     }
 }
