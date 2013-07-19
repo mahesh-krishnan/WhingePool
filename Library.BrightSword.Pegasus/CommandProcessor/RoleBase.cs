@@ -6,7 +6,7 @@ using BrightSword.Pegasus.Services;
 
 namespace BrightSword.Pegasus.CommandProcessor
 {
-    public abstract class RoleBase : ForeverRunningRole
+    public abstract class CommandProcessorRole : ForeverRunningRole
     {
         protected override void Action()
         {

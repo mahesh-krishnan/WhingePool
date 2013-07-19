@@ -38,6 +38,8 @@ namespace Specs.WhingePool
             try
             {
                 var whinge = table.CreateInstance<WhingeEntity>();
+                whinge.Whinger = ((WhingerEntity) ScenarioContext.Current["CurrentWhinger"]).TwitterHandle;
+
                 WhingeService.Save(whinge);
             }
             catch (Exception exception)
