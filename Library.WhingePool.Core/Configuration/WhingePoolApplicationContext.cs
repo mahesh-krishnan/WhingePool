@@ -52,7 +52,7 @@ namespace WhingePool.Core.Configuration
 
         public static WhingePoolApplicationContext CreateFromApplicationSettings()
         {
-            return new WhingePoolApplicationContext(WhingePoolConfiguration.CreateFromCloudConfiguration());
+            return new WhingePoolApplicationContext(WhingePoolConfiguration.CreateFromApplicationSettings());
         }
 
         public static WhingePoolApplicationContext CreateFromCloudConfiguration()

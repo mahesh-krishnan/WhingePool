@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceConfiguration serviceName="CloudService.WhingePool" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
   <Role name="Worker.WhingePool.Main">
-    <Instances count="1" />
+    <Instances count="6" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myobpdqaart;AccountKey=MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA==" />
       <Setting name="StorageAccount" value="myobpdqaart" />
       <Setting name="StorageAccountKey" value="MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA==" />
       <Setting name="RegisteredCommandHandlersTableName" value="WhingePoolTestCommandHandlers" />
@@ -15,6 +15,15 @@
       <Setting name="WhingePoolsTableName" value="WhingePoolTestWhingePools" />
       <Setting name="WhingesByWhingerTableName" value="WhingePoolTestWhingesByWhinger" />
       <Setting name="WhingesByWhingePoolTableName" value="WhingePoolTestWhingesByWhingePool" />
-    <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" value="1" /></ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" value="1" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="johnazariah" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEGhuEz8JvYOcSNzfe9nVK8gwDQYJKoZIhvcNAQEBBQAEggEAiX1tHX0+VorhqxPEp502JdFyyHtstQgdB0r1mcJL7y0oiPQn7Kp7MytjtTlRbkcRQ/VsuQlOqMlJQEQbGc0gwlZeBky9HrQs/V+EAUFmT1thcQD6iMyNYYgi+953lDpsed3qlKLXdYt33M048bbF7r0254u2UmOH9eLnAwJ3yRSd8D0n5wKYRNDC0HS8IpgSTWlkkgs0sIe6lv54qqjPuVJpGhhwGcxRgcxacckbVhdB9vYNMearI/xAeKzmTA8zsiN0GJpNiviFYS+pIwQOAGjuJ6NVqU0MCz8Hgt6NnLTP7Nai4PX4/fsm4tI0QA+ih30hS4QdleflakpOvt7nCTAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECJj6cpuAuHi/gBDufCDTpK6g4ifRq+KFTHJ1" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2014-07-22T23:59:59.0000000+10:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="087733092E8233BA28948CDB48A961F7A08715EC" thumbprintAlgorithm="sha1" />
+    </Certificates>
   </Role>
 </ServiceConfiguration>
