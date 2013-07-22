@@ -24,6 +24,7 @@ input[type="checkbox"].input-validation-error {
     color: #b94a48;
 }
 
+
 .validation-summary-valid {
     display: none;
 }
@@ -46,4 +47,12 @@ input[type="checkbox"].input-validation-error {
 
 .row{
     overflow: hidden; 
+}
+
+textarea {
+    color: #000;
+}
+
+input {
+    color: #000;
 }

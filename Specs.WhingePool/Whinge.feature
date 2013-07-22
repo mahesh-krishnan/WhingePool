@@ -4,7 +4,7 @@
 Background: 
 	Given An Azure Storage Configuration of
 		| StorageAccount | StorageAccountKey                                                                        |
-		| myobpdqaart    | MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA== |
+		| whingepool	    | dzYvfFwlBjuZBMp6ahhodxvjJa3R00KL7sos9YHsZatVVr/z71Dr18ZqdEVhSkJJQz5ZGZLoaBK1O6C+kzQZ7Q== |
 
 	And A Dynamic Command Handler Configuration of
 		| RegisteredCommandHandlersTableName | RegisteredCommandHandlersBlobContainerName |
