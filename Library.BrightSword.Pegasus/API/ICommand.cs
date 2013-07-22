@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace BrightSword.Pegasus.API
+﻿namespace BrightSword.Pegasus.API
 {
     public interface ICommand
     {
-        Guid CommandId { get; }
+        string CommandId { get; }
 
         string CommandName { get; }
 

@@ -57,11 +57,12 @@
     <Reference Include="Microsoft.Web.DistributedCache, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.0.0.0\lib\net40-full\Microsoft.Web.DistributedCache.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAzure.Storage.2.0.6.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
@@ -97,6 +98,10 @@
     <ProjectReference Include="..\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj">
       <Project>{2cec902f-2efe-41dc-a733-0724ebb5cb8f}</Project>
       <Name>Library.BrightSword.Pegasus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.WhingePool.CommandHandlers\Library.WhingePool.CommandHandlers.csproj">
+      <Project>{23d509d1-f1bc-475e-894e-f79b94a5bc17}</Project>
+      <Name>Library.WhingePool.CommandHandlers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Library.WhingePool.Core\Library.WhingePool.Core.csproj">
       <Project>{70f0bbae-21a3-4cf2-b438-a0483b84a373}</Project>

@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace BrightSword.Pegasus.API
+﻿namespace BrightSword.Pegasus.API
 {
     public interface ISaveResult
     {
-        Guid CommandId { get; }
+        string CommandId { get; }
     }
 }

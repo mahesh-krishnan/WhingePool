@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceConfiguration serviceName="CloudService.WhingePool" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
   <Role name="Worker.WhingePool.Main">
-    <Instances count="6" />
+    <Instances count="2" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myobpdqaart;AccountKey=MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA==" />
       <Setting name="StorageAccount" value="myobpdqaart" />
       <Setting name="StorageAccountKey" value="MHDYieseAgGX6HbE8yWK4e0L2eKkUt+an6UbX1/6o0nC2FK2pmgxi/OVW+WEVyH50ROBRMtw0wxf057KDTaDfA==" />
       <Setting name="RegisteredCommandHandlersTableName" value="WhingePoolTestCommandHandlers" />

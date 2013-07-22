@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 using BrightSword.Pegasus.API;
 
@@ -16,16 +17,16 @@ namespace BrightSword.Pegasus.Commands
                           string serializedCommandArgument,
                           string commandName = null)
         {
-            CommandId = Guid.NewGuid();
+            CommandId = DateTime.UtcNow.Ticks.ToString(CultureInfo.InvariantCulture);
             CommandName = commandName ?? GetType()
                                              .FullName;
             CommandArgumentTypeName = commandArgumentTypeName;
             SerializedCommandArgument = serializedCommandArgument;
         }
 
-        public Guid CommandId { get; set; }
+        public string CommandId { get; set; }
 
-        public virtual string CommandName { get; set; }
+        public string CommandName { get; set; }
 
         public string CommandArgumentTypeName { get; set; }
 
@@ -38,9 +39,9 @@ namespace BrightSword.Pegasus.Commands
 
         public static explicit operator Command(CloudQueueMessage _this)
         {
-            if (_this == null) return null;
-
-            return JsonConvert.DeserializeObject<Command>(_this.AsString);
+            return _this == null
+                       ? null
+                       : JsonConvert.DeserializeObject<Command>(_this.AsString);
         }
     }
 

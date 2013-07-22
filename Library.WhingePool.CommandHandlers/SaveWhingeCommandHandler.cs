@@ -19,11 +19,6 @@ namespace Library.WhingePool.CommandHandlers
 
             var whinge = JsonConvert.DeserializeObject<WhingeEntity>(command.SerializedCommandArgument);
 
-            //var whingePool = context.WhingePoolsTable.GetInstances(new TableQuery<WhingePoolEntity>().Where(TableQuery.GenerateFilterCondition("Name",
-            //                                                                                                                                   QueryComparisons.Equal,
-            //                                                                                                                                   whinge.WhingePool)))
-            //                        .FirstOrDefault();
-
             var whingePool = applicationContext.WhingePoolsTable.RetrieveInstanceByRowKey(whinge.WhingePool);
             if (whingePool == null)
             {
