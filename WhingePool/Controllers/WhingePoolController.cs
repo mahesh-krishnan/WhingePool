@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 using WhingePool.Core.Entities;
@@ -19,7 +20,7 @@ namespace WhingePool.Controllers
         public IEnumerable<WhingesByWhingePoolEntity> Get(string id)
         {
             var repository = new WhingeRepository();
-            return repository.GetWhingesInWhingePool(id);
+            return repository.GetWhingesInWhingePool(id).Take(10);
         }
     }
 }
