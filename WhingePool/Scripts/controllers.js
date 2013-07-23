@@ -56,6 +56,21 @@ whingePoolApp.controller("whingePoolsController",
         $scope.selected = "";
 
         $scope.$on("RefreshMyEvents", function (event, whinge) {
+            var found = false;
+            for (var i = 0; i < $scope.whingePools.length; i++) {
+                if ($scope.whingePools[i].Name == whinge.WhingePool) {
+                    found = true;
+                    break;
+                }
+            }
+            var newWhingePool = {Name: ""};
+            
+            if (!found) {
+                newWhingePool.Name = whinge.WhingePool;
+                $scope.whingePools.push(newWhingePool);
+
+            }
+            
             $scope.$broadcast(whinge);
         });
         var getWhingePoolsSuccessCallback = function (data, status) {
@@ -87,30 +102,6 @@ whingePoolApp.controller("whingePoolsController",
     });
 
 
-whingePoolApp.controller("whingePoolsByUserController",
-    function whingePoolsByUserController($scope, whingePoolFactory, notificationFactory) {
-        
-        $scope.whingePools = [];
-
-
-        var getWhingePoolsSuccessCallback = function (data, status) {
-            $scope.whingePools = data;
-        };
-
-
-
-        var errorCallback = function (data, status, headers, config) {
-            notificationFactory.error(data.ExceptionMessage);
-        };
-
-
-        var userName = encodeURIComponent($scope.param);
-
-        whingePoolFactory.getWhingePoolsByUser(userName).success(getWhingePoolsSuccessCallback).error(errorCallback);
-
- 
-
-    });
 
 
 whingePoolApp.controller("whingesController",
@@ -167,6 +158,7 @@ whingePoolApp.controller("whingesByWhingePoolController",
 
         $scope.$on("RefreshMyEvents", function (event, whinge) {
             if (whinge.WhingePool == $scope.WhingePool) {
+                
                 $scope.whinges.unshift(whinge);
             }
         });
