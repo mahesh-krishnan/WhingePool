@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
+<div  ng-init="param='@User.Identity.GetUserName()';">
 @if (!Request.IsAuthenticated)
 {
     <div class="hero-unit">
@@ -13,10 +13,10 @@
 }
 else
 {
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="whingesController">
         <div class="row-fluid">
-            <div class="span3" ng-init="param='@User.Identity.GetUserName()';">
-                <div class="striped" ng-controller="whingesController">
+            <div class="span3">
+                <div class="striped" >
                     <h2>My Whinges</h2>
                     <div ng-repeat="whinge in whinges">
                         {{whinge.Whinge}}<span class="label">{{whinge.WhingePool}}</span>
@@ -28,9 +28,9 @@ else
             <div class="span9">
                 <div class="hero-unit">
                     <h1>WhingePool</h1>
-                    <div  ng-init="param='@User.Identity.GetUserName()'">
+                    <div>
 
-                        <form ng-controller="whingesController" class="form-inline">
+                        <form  class="form-inline">
                             <fieldset>
                                 <textarea placeholder="Type a 150 character whinge…" rows="3" class="input-xxlarge" required ng-model="newWhinge.Whinge"></textarea><br />
                                 <span ng-controller="whingePoolsController" >
@@ -88,3 +88,4 @@ else
 
     </div>
 }
+</div>
