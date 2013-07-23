@@ -19,7 +19,7 @@ else
                 <div class="striped" ng-controller="whingesController">
                     <h2>My Whinges</h2>
                     <div ng-repeat="whinge in whinges">
-                        {{whinge.Whinge}}
+                        {{whinge.Whinge}}<span class="label">{{whinge.WhingePool}}</span>
                     </div>
                 
                 </div>
@@ -28,16 +28,16 @@ else
             <div class="span9">
                 <div class="hero-unit">
                     <h1>WhingePool</h1>
-                    <div class="row" ng-init="param='@User.Identity.GetUserName()'">
+                    <div  ng-init="param='@User.Identity.GetUserName()'">
 
-                        <form ng-controller="whingesController">
+                        <form ng-controller="whingesController" class="form-inline">
                             <fieldset>
-                                <textarea placeholder="Type a 150 character whinge…" class="input-block-level" ng-model="newWhinge.Whinge"></textarea>
-                                <button type="submit" class="btn btn-primary pull-right" ng-click="addWhinge(newWhinge)">Whinge!</button>
-                                <span ng-controller="whingePoolsController" class="pull-right">
+                                <textarea placeholder="Type a 150 character whinge…" rows="3" class="input-xxlarge" required ng-model="newWhinge.Whinge"></textarea><br />
+                                <span ng-controller="whingePoolsController" >
                                     <input type="text" placeholder="Type the WhingePool" ng-model="newWhinge.WhingePool" typeahead="whingePool.Name for whingePool in whingePools | filter:$viewValue">
-                                </span>
-                            </fieldset>
+                               </span>
+                                <button type="submit" class="btn btn-primary" ng-click="addWhinge(newWhinge)">Whinge!</button>
+                        </fieldset>
                         </form>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ else
                                         <div ng-init="currentWhingePool=whingePools[$index].Name"></div>
                                         <div class="striped" ng-controller="whingesByWhingePoolController">
                                             <div ng-repeat="whinge in whinges">
-                                                {{whinge.Whinge}}
+                                                {{whinge.Whinge}}<span class="label">{{whinge.Whinger}}</span>
                                             </div>
                                         </div>
 
@@ -62,7 +62,7 @@ else
                                         <div ng-init="currentWhingePool=whingePools[$index+1].Name"></div>
                                         <div class="striped" ng-controller="whingesByWhingePoolController">
                                             <div ng-repeat="whinge in whinges">
-                                                {{whinge.Whinge}}
+                                                {{whinge.Whinge}}<span class="label">{{whinge.Whinger}}</span>
                                             </div>
                                         </div>
 
@@ -72,7 +72,7 @@ else
                                         <div ng-init="currentWhingePool=whingePools[$index+2].Name"></div>
                                         <div class="striped" ng-controller="whingesByWhingePoolController">
                                             <div ng-repeat="whinge in whinges">
-                                                {{whinge.Whinge}}
+                                                {{whinge.Whinge}}<span class="label">{{whinge.Whinger}}</span>
                                             </div>
                                         </div>
 
