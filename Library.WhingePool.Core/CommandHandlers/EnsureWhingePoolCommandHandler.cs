@@ -1,5 +1,5 @@
 ﻿using BrightSword.Pegasus.API;
-using BrightSword.Pegasus.Utilities;
+using BrightSword.Pegasus.API.Attributes;
 
 using Newtonsoft.Json;
 
@@ -7,7 +7,7 @@ using WhingePool.Core.Commands;
 using WhingePool.Core.Configuration;
 using WhingePool.Core.Entities;
 
-namespace Library.WhingePool.CommandHandlers
+namespace WhingePool.Core.CommandHandlers
 {
     [RegisterCommandHandler(typeof (EnsureWhingePoolCommand))]
     public class EnsureWhingePoolCommandHandler : ICommandHandler

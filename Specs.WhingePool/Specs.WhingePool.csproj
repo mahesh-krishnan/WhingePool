@@ -104,8 +104,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj">
-      <Project>{2cec902f-2efe-41dc-a733-0724ebb5cb8f}</Project>
+    <ProjectReference Include="..\..\..\..\Dropbox\BrightSword\opensource\BrightSword.Pegasus\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj">
+      <Project>{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}</Project>
       <Name>Library.BrightSword.Pegasus</Name>
     </ProjectReference>
     <ProjectReference Include="..\Library.WhingePool.Core\Library.WhingePool.Core.csproj">

@@ -4,5 +4,5 @@ using WhingePool.Core.Entities;
 
 namespace WhingePool.Core.API
 {
-    public interface IWhingerService : ICommandService<WhingerEntity> { }
+    public interface IWhingerService : ICommandService<WhingerEntity> {}
 }
