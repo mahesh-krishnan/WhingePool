@@ -2,7 +2,7 @@
 
 using WhingePool.Core.Entities;
 
-namespace Library.WhingePool.CommandHandlers
+namespace WhingePool.Core.Commands
 {
     public class RecordWhingeAgainstWhingePoolCommand : Command<WhingeEntity>
     {

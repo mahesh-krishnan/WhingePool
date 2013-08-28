@@ -104,10 +104,6 @@
     <Content Include="Microsoft.WindowsAzure.Caching\PerformanceCounters.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj">
-      <Project>{2CEC902F-2EFE-41DC-A733-0724EBB5CB8F}</Project>
-      <Name>Library.BrightSword.Pegasus</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Library.WhingePool.Core\Library.WhingePool.Core.csproj">
       <Project>{70F0BBAE-21A3-4CF2-B438-A0483B84A373}</Project>
       <Name>Library.WhingePool.Core</Name>

@@ -1,1 +1,0 @@
-register_command_handlers --assembly=C:\Users\Mahesh\Source\Repos\WhingePool\Library.WhingePool.CommandHandlers\bin\Debug\Library.WhingePool.CommandHandlers.dll

@@ -14,15 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.WhingePool.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specs.WhingePool", "Specs.WhingePool\Specs.WhingePool.csproj", "{450113CE-F971-40D3-AFE7-63905B62860E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.WhingePool.CommandHandlers", "Library.WhingePool.CommandHandlers\Library.WhingePool.CommandHandlers.csproj", "{23D509D1-F1BC-475E-894E-F79B94A5BC17}"
-EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "CloudService.WhingePool", "CloudService.WhingePool\CloudService.WhingePool.ccproj", "{BFC6C426-5CF5-4BBF-9E1B-0EE9B29CD487}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.WhingePool.Main", "Worker.WhingePool.Main\Worker.WhingePool.Main.csproj", "{BC244E8A-0A66-4F02-83E1-0586F081E0F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.BrightSword.Pegasus", "Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj", "{2CEC902F-2EFE-41DC-A733-0724EBB5CB8F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.BrightSword.Pegasus.RegisterCommandHandlers", "ConsoleApp.BrightSword.Pegasus.RegisterCommandHandlers\ConsoleApp.BrightSword.Pegasus.RegisterCommandHandlers.csproj", "{39DD21D7-8E46-42B9-B277-88B6950D38FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.BrightSword.Pegasus", "..\..\..\Dropbox\BrightSword\opensource\BrightSword.Pegasus\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj", "{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +38,6 @@ Global
 		{450113CE-F971-40D3-AFE7-63905B62860E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{450113CE-F971-40D3-AFE7-63905B62860E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{450113CE-F971-40D3-AFE7-63905B62860E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23D509D1-F1BC-475E-894E-F79B94A5BC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23D509D1-F1BC-475E-894E-F79B94A5BC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23D509D1-F1BC-475E-894E-F79B94A5BC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23D509D1-F1BC-475E-894E-F79B94A5BC17}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFC6C426-5CF5-4BBF-9E1B-0EE9B29CD487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFC6C426-5CF5-4BBF-9E1B-0EE9B29CD487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC6C426-5CF5-4BBF-9E1B-0EE9B29CD487}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,14 +46,10 @@ Global
 		{BC244E8A-0A66-4F02-83E1-0586F081E0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC244E8A-0A66-4F02-83E1-0586F081E0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC244E8A-0A66-4F02-83E1-0586F081E0F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CEC902F-2EFE-41DC-A733-0724EBB5CB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CEC902F-2EFE-41DC-A733-0724EBB5CB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CEC902F-2EFE-41DC-A733-0724EBB5CB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CEC902F-2EFE-41DC-A733-0724EBB5CB8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39DD21D7-8E46-42B9-B277-88B6950D38FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39DD21D7-8E46-42B9-B277-88B6950D38FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39DD21D7-8E46-42B9-B277-88B6950D38FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39DD21D7-8E46-42B9-B277-88B6950D38FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
