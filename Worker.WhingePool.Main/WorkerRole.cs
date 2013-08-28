@@ -1,11 +1,10 @@
 using BrightSword.Pegasus.API;
-using BrightSword.Pegasus.CommandProcessor;
-
+using BrightSword.Pegasus.Core.Role;
 using WhingePool.Core.Configuration;
 
 namespace Worker.WhingePool.Main
 {
-    public class WorkerRole : CommandProcessorRole
+    public class WorkerRole : CloudRunnerRole
     {
         private readonly WhingePoolApplicationContext _whingePoolApplicationContext;
 

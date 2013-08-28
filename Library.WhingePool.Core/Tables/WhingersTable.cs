@@ -1,4 +1,5 @@
-﻿using BrightSword.Pegasus.Utilities;
+﻿using BrightSword.Pegasus.Core.AzureTable;
+using BrightSword.Pegasus.Utilities;
 
 using Microsoft.WindowsAzure.Storage;
 

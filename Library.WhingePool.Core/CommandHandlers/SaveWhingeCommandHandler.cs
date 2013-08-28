@@ -13,7 +13,7 @@ namespace WhingePool.Core.CommandHandlers
     public class SaveWhingeCommandHandler : ICommandHandler
     {
         public void ProcessCommand(ICommand command,
-                                   ICloudRunnerContext context)
+                                   ICommandHandlerContext context)
         {
             var applicationContext = (WhingePoolApplicationContext) context;
 
@@ -22,14 +22,16 @@ namespace WhingePool.Core.CommandHandlers
             var whingePool = applicationContext.WhingePoolsTable.RetrieveInstanceByRowKey(whinge.WhingePool);
             if (whingePool == null)
             {
-                context.CommandsQueue.EnqueueCommand(new EnsureWhingePoolCommand(new WhingePoolEntity
+                applicationContext.CommandQueue.EnqueueCommand(new EnsureWhingePoolCommand(new WhingePoolEntity
                                                                                  {
                                                                                      Name = whinge.WhingePool
                                                                                  }));
             }
 
-            context.CommandsQueue.EnqueueCommand(new RecordWhingeAgainstWhingerCommand(whinge));
-            context.CommandsQueue.EnqueueCommand(new RecordWhingeAgainstWhingePoolCommand(whinge));
+            applicationContext.CommandQueue.EnqueueCommand(new RecordWhingeAgainstWhingerCommand(whinge));
+            applicationContext.CommandQueue.EnqueueCommand(new RecordWhingeAgainstWhingePoolCommand(whinge));
         }
+
+
     }
 }

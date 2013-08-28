@@ -50,7 +50,7 @@ namespace WhingePool.Core.Configuration
             get { return _whingesByWhingePoolTable; }
         }
 
-        public static WhingePoolApplicationContext CreateFromApplicationSettings()
+        public new static WhingePoolApplicationContext CreateFromApplicationSettings()
         {
             return new WhingePoolApplicationContext(WhingePoolConfiguration.CreateFromApplicationSettings());
         }

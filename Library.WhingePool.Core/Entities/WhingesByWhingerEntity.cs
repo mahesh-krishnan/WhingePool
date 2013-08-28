@@ -1,4 +1,4 @@
-﻿using BrightSword.Pegasus.Entities;
+﻿using BrightSword.Pegasus.Core.AzureTable;
 
 namespace WhingePool.Core.Entities
 {

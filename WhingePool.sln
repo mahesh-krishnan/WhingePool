@@ -18,8 +18,6 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "CloudService.WhingePool", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.WhingePool.Main", "Worker.WhingePool.Main\Worker.WhingePool.Main.csproj", "{BC244E8A-0A66-4F02-83E1-0586F081E0F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.BrightSword.Pegasus", "..\..\..\Dropbox\BrightSword\opensource\BrightSword.Pegasus\Library.BrightSword.Pegasus\Library.BrightSword.Pegasus.csproj", "{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +44,6 @@ Global
 		{BC244E8A-0A66-4F02-83E1-0586F081E0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC244E8A-0A66-4F02-83E1-0586F081E0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC244E8A-0A66-4F02-83E1-0586F081E0F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2C49310-7F4C-4BFB-8AB8-78EDCD380B6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

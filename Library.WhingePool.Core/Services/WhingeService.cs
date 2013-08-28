@@ -1,6 +1,6 @@
 ﻿using BrightSword.Pegasus.API;
 using BrightSword.Pegasus.Commands;
-
+using BrightSword.Pegasus.Commands.Core;
 using WhingePool.Core.API;
 using WhingePool.Core.Commands;
 using WhingePool.Core.Configuration;
@@ -21,7 +21,7 @@ namespace WhingePool.Core.Services
         {
             var command = new SaveWhingeCommand(whinge);
 
-            Context.CommandsQueue.EnqueueCommand<SaveWhingeCommand, WhingeEntity>(command);
+            Context.CommandQueue.EnqueueCommand<SaveWhingeCommand, WhingeEntity>(command);
 
             return new SaveResult(command.CommandId);
         }

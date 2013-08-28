@@ -13,7 +13,7 @@ namespace WhingePool.Core.CommandHandlers
     public class RecordWhingeAgainstWhingerCommandHandler : ICommandHandler
     {
         public void ProcessCommand(ICommand command,
-                                   ICloudRunnerContext context)
+                                   ICommandHandlerContext context)
         {
             var applicationContext = (WhingePoolApplicationContext) context;
 
@@ -22,9 +22,11 @@ namespace WhingePool.Core.CommandHandlers
             applicationContext.WhingesByWhingerTable.EnsureInstance(new WhingesByWhingerEntity
                                                                     {
                                                                         Whinge = whinge.Whinge,
-                                                                        WhingePool = whinge.WhingePool,
+                                                                        WhingePool = whinge.WhingePool.ToUpperInvariant(),
                                                                         Whinger = whinge.Whinger
                                                                     });
         }
+
+
     }
 }

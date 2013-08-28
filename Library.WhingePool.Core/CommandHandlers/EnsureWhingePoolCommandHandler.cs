@@ -13,7 +13,7 @@ namespace WhingePool.Core.CommandHandlers
     public class EnsureWhingePoolCommandHandler : ICommandHandler
     {
         public void ProcessCommand(ICommand command,
-                                   ICloudRunnerContext context)
+                                   ICommandHandlerContext context)
         {
             var applicationContext = (WhingePoolApplicationContext) context;
             var whingePool = JsonConvert.DeserializeObject<WhingePoolEntity>(command.SerializedCommandArgument);

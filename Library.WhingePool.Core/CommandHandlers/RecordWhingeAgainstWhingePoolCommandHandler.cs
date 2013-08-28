@@ -13,14 +13,14 @@ namespace WhingePool.Core.CommandHandlers
     public class RecordWhingeAgainstWhingePoolCommandHandler : ICommandHandler
     {
         public void ProcessCommand(ICommand command,
-                                   ICloudRunnerContext context)
+                                   ICommandHandlerContext context)
         {
             var applicationContext = (WhingePoolApplicationContext) context;
             var whinge = JsonConvert.DeserializeObject<WhingeEntity>(command.SerializedCommandArgument);
             applicationContext.WhingesByWhingePoolTable.EnsureInstance(new WhingesByWhingePoolEntity
                                                                        {
                                                                            Whinge = whinge.Whinge,
-                                                                           WhingePool = whinge.WhingePool,
+                                                                           WhingePool = whinge.WhingePool.ToUpperInvariant(),
                                                                            Whinger = whinge.Whinger
                                                                        });
         }
