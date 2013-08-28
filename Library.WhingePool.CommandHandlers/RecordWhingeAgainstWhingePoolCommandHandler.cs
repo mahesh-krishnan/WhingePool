@@ -18,7 +18,7 @@ namespace Library.WhingePool.CommandHandlers
             applicationContext.WhingesByWhingePoolTable.EnsureInstance(new WhingesByWhingePoolEntity
                                                             {
                                                                 Whinge = whinge.Whinge,
-                                                                WhingePool = whinge.WhingePool,
+                                                                WhingePool = whinge.WhingePool.ToUpperInvariant(),
                                                                 Whinger = whinge.Whinger
                                                             });
         }

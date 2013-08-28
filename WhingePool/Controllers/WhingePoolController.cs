@@ -20,7 +20,7 @@ namespace WhingePool.Controllers
         public IEnumerable<WhingesByWhingePoolEntity> Get(string id)
         {
             var repository = new WhingeRepository();
-            return repository.GetWhingesInWhingePool(id).Take(10);
+            return repository.GetWhingesInWhingePool(id.ToUpperInvariant()).Take(10);
         }
     }
 }

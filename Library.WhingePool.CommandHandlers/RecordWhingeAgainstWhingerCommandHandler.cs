@@ -20,7 +20,7 @@ namespace Library.WhingePool.CommandHandlers
             applicationContext.WhingesByWhingerTable.EnsureInstance(new WhingesByWhingerEntity
                                                          {
                                                              Whinge = whinge.Whinge,
-                                                             WhingePool = whinge.WhingePool,
+                                                             WhingePool = whinge.WhingePool.ToUpperInvariant(),
                                                              Whinger = whinge.Whinger
                                                          });
         }

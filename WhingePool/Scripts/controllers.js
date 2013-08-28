@@ -58,7 +58,7 @@ whingePoolApp.controller("whingePoolsController",
         $scope.$on("RefreshMyEvents", function (event, whinge) {
             var found = false;
             for (var i = 0; i < $scope.whingePools.length; i++) {
-                if ($scope.whingePools[i].Name == whinge.WhingePool) {
+                if ($scope.whingePools[i].Name.toUpperCase() == whinge.WhingePool.toUpperCase()) {
                     found = true;
                     break;
                 }
@@ -157,7 +157,7 @@ whingePoolApp.controller("whingesByWhingePoolController",
 
 
         $scope.$on("RefreshMyEvents", function (event, whinge) {
-            if (whinge.WhingePool == $scope.WhingePool) {
+            if (whinge.WhingePool.toUpperCase() == $scope.WhingePool.toUpperCase()) {
                 
                 $scope.whinges.unshift(whinge);
             }

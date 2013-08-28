@@ -326,13 +326,25 @@ namespace WhingePool.Controllers
                 }
                 else
                 {
-                    ViewBag.ReturnUrl = returnUrl;
-                    return View("ExternalLoginConfirmation",
-                                new ExternalLoginConfirmationViewModel
-                                {
-                                    UserName = id.Name,
-                                    LoginProvider = loginProvider
-                                });
+                    var user = new User(id.Name);
+                    if (await Users.Create(user)
+                        && await Logins.Add(new UserLogin(user.Id,
+                                                          loginProvider,
+                                                          id.FindFirstValue(ClaimTypes.NameIdentifier))))
+                    {
+                        await SignIn(user.Id,
+                                     id.Claims,
+                                     isPersistent: false);
+                        return RedirectToLocal(returnUrl);
+                    }
+
+                    //ViewBag.ReturnUrl = returnUrl;
+                    //return View("ExternalLoginConfirmation",
+                    //            new ExternalLoginConfirmationViewModel
+                    //            {
+                    //                UserName = id.Name,
+                    //                LoginProvider = loginProvider
+                    //            });
                 }
             }
 

@@ -8,7 +8,9 @@
     <div class="hero-unit">
         <h1>WhingePool</h1>
         <p class="lead">WhingePool allows you to whinge and get things off your chest, so you can continue on with the rest of your life.</p>
-        <p><a href="About.cshtml" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <p><a href="About.cshtml" class="btn btn-primary btn-large">Learn more &raquo;</a> <span class="btn btn-primary btn-large">@Html.ActionLink("Or just login ",
+                             "TwitterLogin",
+                             "Account")</span> </p>
     </div>
 }
 else

@@ -15,8 +15,8 @@
     <AzureEnableProfiling>False</AzureEnableProfiling>
     <AzureServiceConfiguration>Cloud</AzureServiceConfiguration>
     <AzureSolutionConfiguration>Release</AzureSolutionConfiguration>
-    <AzureStorageAccountLabel>whingepool3</AzureStorageAccountLabel>
-    <AzureStorageAccountName>whingepool3</AzureStorageAccountName>
+    <AzureStorageAccountLabel>whingepool2</AzureStorageAccountLabel>
+    <AzureStorageAccountName>whingepool2</AzureStorageAccountName>
     <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
   </PropertyGroup>
 </Project>
