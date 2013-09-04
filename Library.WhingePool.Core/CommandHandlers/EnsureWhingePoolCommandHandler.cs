@@ -17,7 +17,10 @@ namespace WhingePool.Core.CommandHandlers
         {
             var applicationContext = (WhingePoolApplicationContext) context;
             var whingePool = JsonConvert.DeserializeObject<WhingePoolEntity>(command.SerializedCommandArgument);
-            
+            if (string.IsNullOrWhiteSpace(whingePool.Name))
+            {
+                whingePool.Name = "default";
+            }
             whingePool.Name = whingePool.Name.ToUpperInvariant();
  
             applicationContext.WhingePoolsTable.EnsureInstance(whingePool);
