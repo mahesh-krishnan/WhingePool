@@ -15,7 +15,7 @@ namespace WhingePool.Core.CommandHandlers
         public void ProcessCommand(ICommand command,
                                    ICommandHandlerContext context)
         {
-            var applicationContext = (WhingePoolApplicationContext) context;
+            var applicationContext = (WhingePoolApplicationContext)context;
 
             var whinge = JsonConvert.DeserializeObject<WhingeEntity>(command.SerializedCommandArgument);
 
@@ -31,7 +31,5 @@ namespace WhingePool.Core.CommandHandlers
             applicationContext.CommandQueue.EnqueueCommand(new RecordWhingeAgainstWhingerCommand(whinge));
             applicationContext.CommandQueue.EnqueueCommand(new RecordWhingeAgainstWhingePoolCommand(whinge));
         }
-
-
     }
 }
